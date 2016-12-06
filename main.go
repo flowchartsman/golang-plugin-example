@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"plugin"
 
-	"plugapp/extern"
+	"github.com/alaska/golang-plugin-example/extern"
 )
 
 var NamePlugins = map[string]extern.NamePlugin{}

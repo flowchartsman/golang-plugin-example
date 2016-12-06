@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"plugapp/extern"
+	"github.com/alaska/golang-plugin-example/extern"
 )
 
 var PluginName = "polite"

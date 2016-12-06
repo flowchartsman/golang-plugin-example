@@ -56,7 +56,18 @@ func loadPlugin(path string, f os.FileInfo, _ error) error {
 }
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Println("please provide a directory with plugins as the first argument")
+		os.Exit(1)
+	}
+
 	pluginDir := os.Args[1]
+
+	if fi, err := os.Stat(pluginDir); err != nil || !fi.IsDir() {
+		fmt.Println("plugin directory does not exist or is not directory")
+		os.Exit(1)
+	}
+
 	err := filepath.Walk(pluginDir, loadPlugin)
 	if err != nil {
 		panic(err)
